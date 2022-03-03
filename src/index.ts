@@ -1,5 +1,6 @@
 import axios from 'axios';
 import express from 'express';
+import cors from 'cors';
 
 const URL: string = 'https://discovery.meethue.com/';
 const PORT: number = 6969;
@@ -9,6 +10,8 @@ const discoverBridge = async () => {
 };
 
 const app = express();
+
+app.use(cors());
 
 (async () => {
     let data = await discoverBridge();
